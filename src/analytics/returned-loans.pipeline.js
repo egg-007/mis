@@ -25,9 +25,7 @@ export function buildReturnedLoansPipeline() {
         _id: 0,
         category: '$_id',
         returnedCount: 1,
-        averageDurationDays: {
-          $round: ['$averageDurationDays']
-        }
+        averageDurationDays: { $avg: '$averageDurationDays'}
       }
      },
     { $sort: { category: 1 } },
